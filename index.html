@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator</title>
+
+    <link rel="icon" type="image/x-icon" href="k_img.ico">
+
+    <style>
+        body{
+            margin: auto;
+            background-color: #fff7f0;
+        }
+
+        #main{
+            width: 80%;
+            margin-left: 10%;
+            margin-top: 7%;
+            margin-bottom: 4%;
+            height: 6vw;
+        }
+        textarea{
+            width: 60%;
+            height: 5vw;
+            float: left;
+            border:none;
+            background-color: #ffbe78;
+            font-size: 3vw;
+        }
+        #wynik{
+            width: 39%;
+            float: right;
+            text-align: center;
+            font-size: 3vw;
+        }
+
+        #przyciski{
+            width: 70%;
+            margin-left: 10%;
+            
+        }
+        button {
+            box-shadow:inset 0px 1px 0px 0px #f5c856;
+            background:linear-gradient(to bottom, #e88b00 5%, #c76d00 100%);
+            background-color:#e88b00;
+            border-radius:1px;
+            border:1px solid #751313;
+            display:inline-block;
+            cursor:pointer;
+            color:#ffffff;
+            font-family:Arial;
+            font-size: 2vw;
+            font-weight:bold;
+            padding:2% 3%;
+            text-decoration:none;
+            text-shadow:0px 1px 0px #806216;
+        }
+        button:hover {
+            background:linear-gradient(to bottom, #c76d00 5%, #e88b00 100%);
+            background-color:#c76d00;
+        }
+        button:active {
+            position:relative;
+            top:1px;
+        }
+
+    </style>
+
+</head>
+<body>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" type="text/javascript"></script>
+
+
+    <div id="main">
+        <textarea rows="1"></textarea>
+
+        <div id="wynik"></div>
+    </div>
+
+    
+    <div id="przyciski">
+        <div id="dzialania" style="margin-bottom: 3%;">
+            <button id="b1">+</button>
+            <button id="b2">-</button>
+            <button id="b3">*</button>
+            <button id="b4">/</button>
+            <button id="b5">%</button>
+            <button id="b6">√</button>
+            <button id="b7">∛</button>
+            <button id="b8">²</button>
+            <button id="b9">³</button>
+            <button id="b10">|x|</button>
+            <button id="b11">≈</button>
+            <button id="b12">!</button>
+        </div>
+
+        <div id="cyfry">
+            <button id="b_0">0</button>
+            <button id="b_1">1</button>
+            <button id="b_2">2</button>
+            <button id="b_3">3</button>
+            <button id="b_4">4</button>
+            <button id="b_5">5</button>
+            <button id="b_6">6</button>
+            <button id="b_7">7</button>
+            <button id="b_8">8</button>
+            <button id="b_9">9</button>
+
+            <button id="b_10">,</button>
+
+            <br><br>
+            <button id="b_11">π</button>
+            <button id="b_12">e</button>
+            <button id="b_13">γ</button>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
