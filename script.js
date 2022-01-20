@@ -1,12 +1,18 @@
+var zm = true;
+
 setInterval(() => {
-    if(isNaN($("textarea").val().toString().charAt($("textarea").val().toString().length-1))){
-        return;
+    if(zm == true){
+        if(isNaN($("textarea").val().toString().charAt($("textarea").val().toString().length-1))){
+            return;
+        }
+        else if(eval($("textarea").val()) == undefined){
+            document.getElementById("wynik").innerHTML = 0;
+        }
+        else{
+            document.getElementById("wynik").innerHTML = eval($("textarea").val());    
+        }
+        zm = false;
     }
-    else if(eval($("textarea").val()) == undefined){
-        document.getElementById("wynik").innerHTML = 0;
-    }
-    else{
-        document.getElementById("wynik").innerHTML = eval($("textarea").val());    }
 }, 10);
 
 
@@ -57,6 +63,10 @@ document.getElementById("b12").addEventListener('click', function () {
 },);
 
 
+document.getElementById("b13").addEventListener('click', function () {
+    $("textarea").val($("textarea").val().slice(0, -1));
+},);
+
 
 
 document.getElementById("b_0").addEventListener('click', function () { $("textarea").val($("textarea").val() + "0"); },);
@@ -74,3 +84,39 @@ document.getElementById("b_10").addEventListener('click', function () { $("texta
 document.getElementById("b_11").addEventListener('click', function () { $("textarea").val($("textarea").val() + Math.PI); },);
 document.getElementById("b_12").addEventListener('click', function () { $("textarea").val($("textarea").val() + Math.E); },);
 document.getElementById("b_13").addEventListener('click', function () { $("textarea").val($("textarea").val() + "0.5772156649"); },);
+
+
+
+
+window.addEventListener('keydown',
+function(event) {
+    if(document.querySelector("textarea") !== document.activeElement){
+        switch (event.keyCode) {
+            case 48:  $("textarea").val($("textarea").val() + "0"); break; 
+            case 49:  $("textarea").val($("textarea").val() + "1"); break;  
+            case 50:  $("textarea").val($("textarea").val() + "2"); break; 
+            case 51:  $("textarea").val($("textarea").val() + "3"); break; 
+            case 52:  $("textarea").val($("textarea").val() + "4"); break; 
+            case 53:  $("textarea").val($("textarea").val() + "5"); break; 
+            case 54:  $("textarea").val($("textarea").val() + "6"); break; 
+            case 55:  $("textarea").val($("textarea").val() + "7"); break; 
+            case 56:  $("textarea").val($("textarea").val() + "8"); break;      
+            case 57:  $("textarea").val($("textarea").val() + "9"); break;     
+            case 188:  $("textarea").val($("textarea").val() + "."); break; 
+            case 190:  $("textarea").val($("textarea").val() + "."); break; 
+            case 107:  $("textarea").val($("textarea").val() + "+"); break; 
+            case 109:  $("textarea").val($("textarea").val() + "-"); break; 
+            case 106:  $("textarea").val($("textarea").val() + "*"); break; 
+            case 111:  $("textarea").val($("textarea").val() + "/"); break; 
+            case 8:  $("textarea").val($("textarea").val().slice(0, -1)); break; 
+        }
+    };
+    zm = true;
+}, false);   
+
+
+
+window.addEventListener('click',
+function(event) {
+    zm = true;
+}, false);   
