@@ -1,19 +1,16 @@
-var zm = true;
 
-setInterval(() => {
-    if(zm == true){
-        if(isNaN($("textarea").val().toString().charAt($("textarea").val().toString().length-1))){
-            return;
-        }
-        else if(eval($("textarea").val()) == undefined){
-            document.getElementById("wynik").innerHTML = 0;
-        }
-        else{
-            document.getElementById("wynik").innerHTML = eval($("textarea").val());    
-        }
-        zm = false;
+function check(){
+    if(isNaN($("textarea").val().toString().charAt($("textarea").val().toString().length-1))){
+        return;
     }
-}, 10);
+    else if(eval($("textarea").val()) == undefined){
+        document.getElementById("wynik").innerHTML = 0;
+    }
+    else{
+        document.getElementById("wynik").innerHTML = eval($("textarea").val());    
+    }
+
+}
 
 
 
@@ -111,12 +108,14 @@ function(event) {
             case 8:  $("textarea").val($("textarea").val().slice(0, -1)); break; 
         }
     };
-    zm = true;
+    check();
 }, false);   
 
 
 
 window.addEventListener('click',
 function(event) {
-    zm = true;
+    check();
 }, false);   
+
+check();
