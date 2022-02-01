@@ -1,6 +1,16 @@
-
 function check(){
-    if(isNaN($("textarea").val().toString().charAt($("textarea").val().toString().length-1))){
+    if($("textarea").val().toString().includes('=')){
+        var eq = algebra.parse(($("textarea").val().toString()));
+        
+        var letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'k', 'x', 'y'];
+        for(var i = 0; i < letters.length; i++){
+            if(eq.toString().includes(letters[i])){
+                var ans = eq.solveFor(letters[i].toString());
+                document.getElementById("wynik").innerHTML = letters[i] + " = " + ans.toString();
+            }
+        }
+    }
+    else if(isNaN($("textarea").val().toString().charAt($("textarea").val().toString().length-1))){
         return;
     }
     else if(eval($("textarea").val()) == undefined){
